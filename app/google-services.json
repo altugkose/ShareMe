@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "627489256528",
+    "project_id": "shareme-fa08d",
+    "storage_bucket": "shareme-fa08d.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:627489256528:android:7b1ff0cb4e6dfa6beb0d55",
+        "android_client_info": {
+          "package_name": "com.kage.shareme"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBUIiFkbmnq3me7R4XFOKCYCpUGnBt8Kpg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
