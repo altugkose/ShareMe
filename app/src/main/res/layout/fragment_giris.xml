@@ -1,63 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.GirisFragment">
+    android:orientation="vertical"
+    android:gravity="center"
+    android:padding="32dp"
+    android:background="@color/white">
 
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ShareMe"
+        android:textSize="42sp"
+        android:textStyle="bold"
+        android:textColor="@color/instagram_black"
+        android:layout_marginBottom="48dp"/>
 
-    <EditText
-        android:id="@+id/EmailText"
-        android:layout_width="303dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="60dp"
-        android:ems="10"
-        android:inputType="textEmailAddress"
-        android:hint="E-mail Adresinizi Giriniz"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox">
 
-    <EditText
-        android:id="@+id/sifreText"
-        android:layout_width="303dp"
-        android:layout_height="66dp"
-        android:layout_marginTop="30dp"
-        android:ems="10"
-        android:hint="Parolanızı Giriniz"
-        android:inputType="textPassword"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/EmailText" />
-
-    <LinearLayout
-        android:layout_width="340dp"
-        android:layout_height="78dp"
-        android:layout_marginTop="30dp"
-        android:gravity="center"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/sifreText">
-
-        <Button
-            android:id="@+id/uyeOlButton"
-            android:layout_width="103dp"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/EmailText"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Üye Ol" />
+            android:hint="E-posta"
+            android:inputType="textEmailAddress"/>
 
+    </com.google.android.material.textfield.TextInputLayout>
 
-        <Button
-            android:id="@+id/girisButton"
-            android:layout_width="wrap_content"
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        app:passwordToggleEnabled="true">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/sifreText"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:text="Giriş Yap" />
-    </LinearLayout>
+            android:hint="Şifre"
+            android:inputType="textPassword"/>
 
+    </com.google.android.material.textfield.TextInputLayout>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/girisButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Giriş Yap"
+        android:padding="12dp"/>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/uyeOlButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Üye Ol"
+        android:layout_marginTop="8dp"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"/>
+
+</LinearLayout>

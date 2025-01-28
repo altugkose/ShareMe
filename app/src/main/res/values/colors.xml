@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="black">#FF000000</color>
-    <color name="white">#FFFFFFFF</color>
+    <color name="instagram_blue">#0095F6</color>
+    <color name="instagram_black">#262626</color>
+    <color name="instagram_gray">#DBDBDB</color>
+    <color name="instagram_light_gray">#FAFAFA</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#000000</color>
 </resources>

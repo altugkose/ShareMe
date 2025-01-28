@@ -6,15 +6,18 @@ import android.view.LayoutInflater
 import android.view.MenuItem
 import android.view.View
 import android.view.ViewGroup
+import android.widget.LinearLayout
 import android.widget.Toast
 import androidx.appcompat.widget.PopupMenu
 import androidx.navigation.Navigation
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.firestore.FirebaseFirestore
 import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.kage.shareme.R
+import com.kage.shareme.adapter.PostAdapter
 import com.kage.shareme.databinding.FragmentFeedBinding
 import com.kage.shareme.model.Post
 
@@ -25,6 +28,7 @@ class FeedFragment : Fragment(), PopupMenu.OnMenuItemClickListener {
     private lateinit var auth : FirebaseAuth
     private lateinit var db : FirebaseFirestore
     var postList : ArrayList<Post> = arrayListOf()
+    private var adapter : PostAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -54,6 +58,10 @@ class FeedFragment : Fragment(), PopupMenu.OnMenuItemClickListener {
         popup.setOnMenuItemClickListener(this)
 
         firestoreVerileriAL()
+
+        adapter = PostAdapter(postList)
+        binding.feedRcyclerView.layoutManager = LinearLayoutManager(requireContext())
+        binding.feedRcyclerView.adapter = adapter
     }
 
     fun firestoreVerileriAL(){
@@ -61,7 +69,7 @@ class FeedFragment : Fragment(), PopupMenu.OnMenuItemClickListener {
             if (error != null){
                 Toast.makeText(requireContext(),error.localizedMessage,Toast.LENGTH_LONG).show()
             } else {
-                if (value != null && value.isEmpty){
+                if (value != null && !value.isEmpty){
                     postList.clear()
                     val documents = value.documents
                     for (document in documents){
@@ -72,6 +80,7 @@ class FeedFragment : Fragment(), PopupMenu.OnMenuItemClickListener {
                         val post = Post(comment,email,downloadUrl)
                         postList.add(post)
                       }
+                    adapter?.notifyDataSetChanged()
 
                     }
                 }
