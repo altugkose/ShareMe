@@ -1,4 +1,4 @@
-package com.kage.shareme
+package com.kage.shareme.view
 
 import android.Manifest
 import android.content.Intent
@@ -29,7 +29,6 @@ import com.google.firebase.firestore.ktx.firestore
 import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.FirebaseStorage
 import com.google.firebase.storage.ktx.storage
-import com.kage.shareme.databinding.FragmentFeedBinding
 import com.kage.shareme.databinding.FragmentYuklemeBinding
 import java.util.UUID
 

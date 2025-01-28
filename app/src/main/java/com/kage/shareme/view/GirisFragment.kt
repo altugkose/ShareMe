@@ -1,7 +1,6 @@
-package com.kage.shareme
+package com.kage.shareme.view
 
 import android.os.Bundle
-import android.text.Layout.Directions
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -11,7 +10,6 @@ import androidx.navigation.Navigation
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.auth.ktx.auth
 import com.google.firebase.ktx.Firebase
-import com.kage.shareme.databinding.FragmentFeedBinding
 import com.kage.shareme.databinding.FragmentGirisBinding
 
 class GirisFragment : Fragment() {
